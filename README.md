@@ -1,7 +1,7 @@
 # serverless-java-example
 
-An example Serverless application written in Java to demonstrate mapping of
-data and other bits.
+An example AWS Lambda application written in Java and using the Serverless
+framework to provide an example of how the request/response mapping works.
 
 Once launched, you can do an example query with:
 
