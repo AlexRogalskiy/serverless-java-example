@@ -5,8 +5,8 @@ framework to provide an example of how the request/response mapping works.
 
 Once launched, you can do an example query with:
 
-    curl -i https://ENDPOINTNAME.execute-api.ap-southeast-2.amazonaws.com/dev/test
-    curl -s https://ENDPOINTNAME.execute-api.ap-southeast-2.amazonaws.com/dev/test | jq
+    curl -i https://ENDPOINTNAME.execute-api.ap-southeast-2.amazonaws.com/dev/hello
+    curl -s https://ENDPOINTNAME.execute-api.ap-southeast-2.amazonaws.com/dev/hello | jq
 
 This example returns a test message and also echos back the object of the request
 showing all the different values available.
@@ -16,7 +16,7 @@ showing all the different values available.
 
 * Java 8
 * An AWS account with Lambda enabled
-* Serverless framework version 1.0.0+
+* Serverless framework version 1.0.0.beta.2+
 
 
 # Technology
@@ -36,8 +36,8 @@ To build & deploy the serverless application:
 Optionally you can specify the `--stage` parameter to deploy specific instances
 of the application (eg dev vs staging vs production).
 
-If you've made changes to specific functions, you'll have to build and upload
-to AWS (where NAME == your function name):
+If you've made changes to specific functions, you can build & deploy that
+specific function only, which might be faster than a full `serverless deploy`.
 
     gradle buildZip
     serverless deploy function --function NAME

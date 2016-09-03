@@ -36,7 +36,17 @@ functions:
     handler: hello.Hello
     events:
      - http:
-         path: test
+         path: hello
+         method: get
+         response:
+           headers:
+             Content-Type: "'text/html'"
+           template: $input.path('$')
+  notfound:
+    handler: hello.NotFound
+    events:
+     - http:
+         path: notfound
          method: get
 
 #   you can add any of the following events

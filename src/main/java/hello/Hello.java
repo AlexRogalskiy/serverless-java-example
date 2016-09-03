@@ -5,13 +5,16 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 
 /**
- * Allocated an available unique name to a requesting application
+ * This route returns a simple plain text response. However in order
+ * to do so, we had to set the Content-Type header and also define a
+ * custom mapping template specifically in the
+ * serverless.yml file to allow plaintext.
  */
-public class Hello implements RequestHandler<Request, Response> {
+public class Hello implements RequestHandler<Request, String> {
 
     @Override
-    public Response handleRequest(Request input, Context context) {
+    public String handleRequest(Request input, Context context) {
 
-        return new Response("Example Message", input);
+        return new String("Hello world!");
     }
 }
